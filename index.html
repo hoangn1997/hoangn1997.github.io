@@ -1,81 +1,154 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <style>
-    .mySlides {
-        display: none;
+    p {
+        height: 200px;
+        width: 500px;
+        margin: 100px auto;
+        position: relative;
     }
 
     img {
-        width: 600px;
-        height: 800px;
+        height: 100px;
+        position: absolute;
+        left: 0;
+        offset-path: path('m 0 50 q 50-30 100-30 t 100 30 100 0 100-30 100 30');
+        box-shadow: 1px 1px 3px #0008;
+        transition: transform .4s ease-out, offset-path .4s cubic-bezier(.77, -1.17, .75, .84), box-shadow .3s, z-index .3s;
+        z-index: 0;
         object-fit: contain;
-        background: black
     }
+
+    img:hover {
+        transform: scale(3);
+        /* on hover, the path gets a bit shorter & flattened & shifted to left/bottom a bit for nicer movement */
+        offset-path: path('m 5 65 q 45-0 90-0 t 90 0 90 0 90-0 90 0');
+        box-shadow: 3px 4px 10px #0006;
+        z-index: 999;
+    }
+
+    /* 3 images */
+    img:nth-last-child(3):first-child {
+        offset-distance: 17%;
+    }
+
+    img:nth-last-child(2):nth-child(2) {
+        offset-distance: 49%;
+    }
+
+    img:last-child:nth-child(3) {
+        offset-distance: 81%;
+    }
+
+    /* 4 images */
+    img:nth-last-child(4):first-child {
+        offset-distance: 10%;
+    }
+
+    img:nth-last-child(3):nth-child(2) {
+        offset-distance: 35%;
+    }
+
+    img:nth-last-child(2):nth-child(3) {
+        offset-distance: 65%;
+    }
+
+    img:last-child:nth-child(4) {
+        offset-distance: 90%;
+    }
+
+    /* 5 images */
+    img:nth-last-child(5):first-child {
+        offset-distance: 0%;
+    }
+
+    img:nth-last-child(4):nth-child(2) {
+        offset-distance: 25%;
+    }
+
+    img:nth-last-child(3):nth-child(3) {
+        offset-distance: 51%;
+    }
+
+    img:nth-last-child(2):nth-child(4) {
+        offset-distance: 75%;
+    }
+
+    img:last-child:nth-child(5) {
+        offset-distance: 100%;
+    }
+
     body {
-        background: black
+        background-color: black;
     }
+
     h1 {
-        color: white
+        color: whitesmoke;
     }
 </style>
 
 <body>
     <h1>Gallery</h1>
-    <div class="w3-content w3-display-container">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1wtntvG7mHj94UKnBBoEdmbIlKL3fQUvN" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1_jxBq4rW7-OeMtGTRHLmyZovMjeejVPW" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1q2xkaBGRZnLYRulEKuQ8PSEmeP7h-MFJ" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1YXJSX09JZ0X6tixltMWfLnJpimr0PIrP" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1l8ARj7MzijeNcnUc07iaCJ4LNnESgIVi" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1at48x8Ng_ojrbGU5b3yGCh0InT5IRwEG" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1-hNUVfXN-RuF_qKlzZQIZzf07Abmbftu" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=18SDrIYQUBKkkvKWYyDyDc3H1hZCiWq6p" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1Y5Gxp7pircnuV15FI0F50wwJdy0UqcXV" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1U3va4AVtEYi4CENfJjO4WlHLXGDi0nAX" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1XWCXl5XcPHpT4CapZlC9UKOVbgo4kbm8" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=17wj6L0QdiGde-lRbN_sXQumbaPvp7n7W" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1MXXVgtwncgA7Ei1bXNS_O0eRLnh8T_ZH" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1V2VWJf2x5BIaqJXbOXPaivgJYNLV5THS" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1mf54lRK4sxso6dERR6mvH_EuG4ctcJL9" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1759-jh8lUGCMCt-1WloAixNc48c66xNr" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=18oJtsvmkplG9CRQk4wihv6f7JTILf93f" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1LF070kMXFxW39yf7CprVCMoB-Rj_639-" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1PiGf3HVfR9Y-nX0rzIES7j3GhWxpGXIz" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=19V42DC5fGawXIKqzhOTkfEsUFli59FP3" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1WrBBwZRCCq9cm7taA0LiPKjDvGBq88bw" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1mADp4JJiiOi3nS_Jtd8g0ts_c-aX4uoB" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1o8miJsgC8VIrpcXcVI-c5BfPRsBNhQLw" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1OTINORtyTZmOGQqbIYQgLjp7WL80dFqI" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1sbx7GsYRcBwdI4iP6z2Cctg9yXI0Zixy" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1goapdMMpbQQgLgHsT6FaysRnENJRBZIV" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1yFHlJBUydSaxNl1s3vuLe6VM3EblxlUf" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1-6kQzoOzJhHS7iN--4d1mwngy_oEBmUM" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1Z6bVkhB_FLXIAcSGZtjZylh2cv_CW3rT" style="width:100%">
-        <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1entklMyX25D17NwTPUnBgbvOdXK9gdbk" style="width:100%">
+    <div class="container">
+        <p>
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1wtntvG7mHj94UKnBBoEdmbIlKL3fQUvN">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1_jxBq4rW7-OeMtGTRHLmyZovMjeejVPW">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1q2xkaBGRZnLYRulEKuQ8PSEmeP7h-MFJ">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1YXJSX09JZ0X6tixltMWfLnJpimr0PIrP">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1l8ARj7MzijeNcnUc07iaCJ4LNnESgIVi">
+        </p>
+        <p>
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1at48x8Ng_ojrbGU5b3yGCh0InT5IRwEG">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1-hNUVfXN-RuF_qKlzZQIZzf07Abmbftu">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=18SDrIYQUBKkkvKWYyDyDc3H1hZCiWq6p">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1Y5Gxp7pircnuV15FI0F50wwJdy0UqcXV">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1U3va4AVtEYi4CENfJjO4WlHLXGDi0nAX">
+        </p>
+        <p>
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1XWCXl5XcPHpT4CapZlC9UKOVbgo4kbm8">
 
-        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=17wj6L0QdiGde-lRbN_sXQumbaPvp7n7W">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1MXXVgtwncgA7Ei1bXNS_O0eRLnh8T_ZH">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1V2VWJf2x5BIaqJXbOXPaivgJYNLV5THS">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1mf54lRK4sxso6dERR6mvH_EuG4ctcJL9">
+        </p>
+        <p>
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1759-jh8lUGCMCt-1WloAixNc48c66xNr">
+
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=18oJtsvmkplG9CRQk4wihv6f7JTILf93f">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1LF070kMXFxW39yf7CprVCMoB-Rj_639-">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1PiGf3HVfR9Y-nX0rzIES7j3GhWxpGXIz">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=19V42DC5fGawXIKqzhOTkfEsUFli59FP3">
+        </p>
+        <p>
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1WrBBwZRCCq9cm7taA0LiPKjDvGBq88bw">
+
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1mADp4JJiiOi3nS_Jtd8g0ts_c-aX4uoB">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1o8miJsgC8VIrpcXcVI-c5BfPRsBNhQLw">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1OTINORtyTZmOGQqbIYQgLjp7WL80dFqI">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1sbx7GsYRcBwdI4iP6z2Cctg9yXI0Zixy">
+        </p>
+        <p>
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1goapdMMpbQQgLgHsT6FaysRnENJRBZIV">
+
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1yFHlJBUydSaxNl1s3vuLe6VM3EblxlUf">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1-6kQzoOzJhHS7iN--4d1mwngy_oEBmUM">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1Z6bVkhB_FLXIAcSGZtjZylh2cv_CW3rT">
+            <img class="mySlides" src="https://drive.google.com/uc?export=view&id=1entklMyX25D17NwTPUnBgbvOdXK9gdbk">
+        </p>
     </div>
-    <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
-
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            if (n > x.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = x.length }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            x[slideIndex - 1].style.display = "block";
-        }
-    </script>
 </body>
 
 </html>
